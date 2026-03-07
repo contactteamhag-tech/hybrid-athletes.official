@@ -120,7 +120,8 @@
     }
 
     .btn-primary:hover,
-    .btn-secondary:hover {
+    .btn-secondary:hover,
+    .btn-blue:hover {
       transform: translateY(-2px);
     }
 
@@ -134,10 +135,6 @@
       background: linear-gradient(135deg, #0b86ed, #0078d7);
       color: white;
       box-shadow: 0 16px 35px rgba(0,120,215,0.20);
-    }
-
-    .btn-blue:hover {
-      transform: translateY(-2px);
     }
 
     .hero {
@@ -482,19 +479,24 @@
       font-size: 1.05rem;
     }
 
-    .decathlon-logo {
-      width: 150px;
-      height: 92px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #0078d7, #0b86ed);
-      color: #fff;
+    .partner-logo-wrap {
+      width: 170px;
+      min-height: 92px;
       display: grid;
       place-items: center;
-      font-size: 1.15rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
       margin: 0 auto 14px;
+      padding: 12px 16px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
       box-shadow: var(--shadow-soft);
+    }
+
+    .partner-logo-wrap img {
+      width: 100%;
+      max-width: 135px;
+      height: auto;
+      object-fit: contain;
     }
 
     footer {
@@ -885,7 +887,7 @@
             </div>
 
             <div style="margin-top:20px;">
-              <a class="btn btn-primary" href="mailto:contact@teamhag.com">Sponsor werden</a>
+              <a class="btn btn-primary" href="mailto:contact@teamhag.com">Zum Partner</a>
             </div>
           </div>
 
@@ -913,10 +915,18 @@
         <div class="partner-grid">
           <div class="logo-card">
             <div>
-              <div class="decathlon-logo">DECATHLON</div>
+              <div class="partner-logo-wrap">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Decathlon_-_logo_%28France%2C_2024%29.svg"
+                  alt="Decathlon Logo"
+                />
+              </div>
               <span class="tag tag-blue">Official Partner</span>
               <h3>Decathlon</h3>
               <p>Erster offizieller Partner von Hybrid Athletes.</p>
+              <div style="margin-top:18px;">
+                <a class="btn btn-blue" href="https://tidd.ly/3YIhLYw" target="_blank" rel="noopener noreferrer">Zum Partner</a>
+              </div>
             </div>
           </div>
 
