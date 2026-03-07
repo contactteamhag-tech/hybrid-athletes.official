@@ -7,16 +7,19 @@
   <meta name="description" content="Hybrid Athletes ist ein moderner Laufverein aus Köln. Community, Performance und gemeinsame Runs für jedes Level. Folge uns auf Instagram und werde Teil des Teams." />
   <style>
     :root {
-      --bg: #0a0a0c;
-      --bg-soft: #121217;
-      --card: rgba(255,255,255,0.05);
-      --card-strong: rgba(255,255,255,0.08);
-      --text: #f4f4f5;
-      --muted: #b0b3bb;
-      --line: rgba(255,255,255,0.1);
-      --accent: #c00000;
-      --accent-2: #ff3b3b;
-      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --bg: #f5f7fb;
+      --bg-soft: #ffffff;
+      --bg-alt: #eef3f9;
+      --card: rgba(255,255,255,0.92);
+      --card-strong: rgba(255,255,255,0.98);
+      --text: #0f172a;
+      --muted: #5b6472;
+      --line: rgba(15,23,42,0.10);
+      --accent: #d62828;
+      --accent-2: #ef4444;
+      --accent-soft: rgba(214,40,40,0.08);
+      --shadow: 0 20px 55px rgba(15,23,42,0.08);
+      --shadow-soft: 0 10px 30px rgba(15,23,42,0.05);
       --radius: 22px;
       --max: 1180px;
     }
@@ -27,11 +30,11 @@
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(192,0,0,0.18), transparent 28%),
-        radial-gradient(circle at top left, rgba(255,59,59,0.12), transparent 22%),
-        linear-gradient(180deg, #09090b 0%, #0f1015 100%);
+        radial-gradient(circle at top right, rgba(214,40,40,0.10), transparent 26%),
+        radial-gradient(circle at top left, rgba(239,68,68,0.08), transparent 24%),
+        linear-gradient(180deg, #f8fafc 0%, #eef3f9 100%);
       color: var(--text);
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -47,7 +50,7 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(14px);
-      background: rgba(8,8,10,0.7);
+      background: rgba(255,255,255,0.82);
       border-bottom: 1px solid var(--line);
     }
 
@@ -68,16 +71,15 @@
     }
 
     .brand-logo {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.15);
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border: 1px solid rgba(15,23,42,0.08);
+      background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(248,250,252,0.95));
       overflow: hidden;
       display: grid;
       place-items: center;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
     }
 
     .brand-logo img { width: 100%; height: 100%; object-fit: cover; }
@@ -108,19 +110,19 @@
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: white;
-      box-shadow: 0 16px 35px rgba(192,0,0,0.28);
+      box-shadow: 0 16px 35px rgba(214,40,40,0.18);
     }
 
     .btn-primary:hover { transform: translateY(-2px); }
 
     .btn-secondary {
       border-color: var(--line);
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.92);
       color: var(--text);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,1);
       transform: translateY(-2px);
     }
 
@@ -142,15 +144,16 @@
     .cta-box,
     .feature,
     .faq-item,
-    .stat {
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+    .stat,
+    .logo-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.90));
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
     .hero-copy {
-      padding: 34px;
+      padding: 36px;
       min-height: 100%;
       position: relative;
       overflow: hidden;
@@ -162,7 +165,7 @@
       inset: auto -40px -40px auto;
       width: 220px;
       height: 220px;
-      background: radial-gradient(circle, rgba(192,0,0,0.25), transparent 65%);
+      background: radial-gradient(circle, rgba(214,40,40,0.12), transparent 65%);
       pointer-events: none;
     }
 
@@ -172,9 +175,9 @@
       gap: 8px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(192,0,0,0.12);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #ffd7d7;
+      background: var(--accent-soft);
+      border: 1px solid rgba(214,40,40,0.10);
+      color: var(--accent);
       font-size: 0.86rem;
       font-weight: 700;
       margin-bottom: 18px;
@@ -182,7 +185,7 @@
 
     h1, h2, h3 {
       margin: 0;
-      line-height: 1.05;
+      line-height: 1.08;
       letter-spacing: -0.03em;
     }
 
@@ -193,7 +196,7 @@
     }
 
     .lead {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       color: var(--muted);
       max-width: 62ch;
       margin-bottom: 28px;
@@ -223,14 +226,14 @@
     }
 
     .hero-visual {
-      min-height: 300px;
+      min-height: 320px;
       border-radius: 18px;
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(140deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+        linear-gradient(140deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
         url('images/hero-run.jpg') center/cover no-repeat;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(15,23,42,0.06);
     }
 
     .hero-visual::before {
@@ -238,8 +241,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.7)),
-        radial-gradient(circle at 80% 20%, rgba(192,0,0,0.35), transparent 28%);
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(15,23,42,0.28)),
+        radial-gradient(circle at 80% 20%, rgba(214,40,40,0.18), transparent 30%);
     }
 
     .floating-badge {
@@ -249,13 +252,14 @@
       z-index: 2;
       padding: 12px 14px;
       border-radius: 16px;
-      background: rgba(10,10,12,0.72);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(255,255,255,0.45);
       backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-soft);
     }
 
     .floating-badge strong { display: block; font-size: 1rem; }
-    .floating-badge span { color: var(--muted); font-size: 0.92rem; }
+    .floating-badge span { color: #475569; font-size: 0.92rem; }
 
     section {
       padding: 34px 0;
@@ -275,14 +279,23 @@
       max-width: 62ch;
     }
 
-    .stats {
+    .stats,
+    .features,
+    .sponsor-grid,
+    .partner-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
 
-    .stat {
-      padding: 22px;
+    .stats { grid-template-columns: repeat(4, 1fr); }
+    .features { grid-template-columns: repeat(3, 1fr); }
+    .sponsor-grid { grid-template-columns: 1.2fr 0.8fr; }
+    .partner-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .stat,
+    .feature,
+    .logo-card {
+      padding: 24px;
     }
 
     .stat strong {
@@ -293,16 +306,6 @@
 
     .stat span { color: var(--muted); }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .feature {
-      padding: 24px;
-    }
-
     .feature .icon {
       width: 44px;
       height: 44px;
@@ -310,15 +313,17 @@
       display: grid;
       place-items: center;
       margin-bottom: 16px;
-      background: rgba(192,0,0,0.16);
-      color: #fff;
+      background: var(--accent-soft);
+      color: var(--accent);
       font-weight: 800;
     }
 
     .feature p,
     .about-box p,
     .faq-item p,
-    .cta-box p {
+    .cta-box p,
+    .logo-card p,
+    .section-card p {
       color: var(--muted);
       margin: 12px 0 0;
     }
@@ -347,11 +352,11 @@
       display: inline-block;
       padding: 7px 11px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      color: #d6d8dd;
+      background: #f8fafc;
+      color: #334155;
       font-size: 0.85rem;
       margin-bottom: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(15,23,42,0.08);
     }
 
     .runs-grid ul {
@@ -369,6 +374,35 @@
 
     .faq-item {
       padding: 22px;
+    }
+
+    .sponsor-main {
+      padding: 30px;
+    }
+
+    .sponsor-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .logo-card {
+      min-height: 150px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .logo-placeholder {
+      width: 92px;
+      height: 92px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #ffffff, #edf2f7);
+      border: 1px solid rgba(15,23,42,0.08);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #94a3b8;
+      margin-bottom: 14px;
     }
 
     .cta-box {
@@ -406,13 +440,15 @@
       .cta-box,
       .features,
       .runs-grid,
-      .stats {
+      .stats,
+      .sponsor-grid,
+      .partner-grid {
         grid-template-columns: 1fr 1fr;
       }
 
-      .features { grid-template-columns: 1fr 1fr; }
       .runs-grid { grid-template-columns: 1fr; }
-      .cta-box { grid-template-columns: 1fr; }
+      .cta-box,
+      .sponsor-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 760px) {
@@ -422,7 +458,8 @@
       .hero-grid,
       .about-grid,
       .features,
-      .stats {
+      .stats,
+      .partner-grid {
         grid-template-columns: 1fr;
       }
       .hero-copy,
@@ -432,7 +469,9 @@
       .feature,
       .faq-item,
       .stat,
-      .cta-box {
+      .cta-box,
+      .logo-card,
+      .sponsor-main {
         padding: 22px;
       }
       h1 { max-width: 100%; }
@@ -452,7 +491,8 @@
         <a href="#about">Über uns</a>
         <a href="#runs">Unsere Runs</a>
         <a href="#community">Community</a>
-        <a href="#faq">FAQ</a>
+        <a href="#sponsor">Sponsor</a>
+        <a href="#partner">Partner</a>
         <a href="#contact">Kontakt</a>
       </nav>
     </div>
@@ -612,6 +652,79 @@
               <li>Nachricht senden</li>
               <li>Infos zum nächsten Run erhalten</li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sponsor">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Unser Sponsor</h2>
+            <p>Hier kann euer Hauptsponsor prominent und hochwertig präsentiert werden – mit klarer Sichtbarkeit und professioneller Einbindung in eure Markenwelt.</p>
+          </div>
+        </div>
+        <div class="sponsor-grid">
+          <div class="section-card sponsor-main">
+            <span class="tag">Main Sponsor</span>
+            <h3>Platz für euren Hauptsponsor</h3>
+            <p>
+              Diese Sektion ist bewusst hochwertig aufgebaut, damit der Sponsor nicht nur genannt, sondern sichtbar inszeniert wird. Hier kann später ein Logo, ein kurzer Vorstellungstext, ein Claim und auf Wunsch ein Link zur Website eingebunden werden.
+            </p>
+            <p>
+              Ideal für Unternehmen, die mit sportlicher Performance, Community, Gesundheit oder lokaler Sichtbarkeit verbunden werden möchten.
+            </p>
+          </div>
+          <div class="sponsor-side">
+            <div class="logo-card">
+              <div>
+                <div class="logo-placeholder">LOGO</div>
+                <h3>Sponsor Logo</h3>
+                <p>Datei später einfach austauschen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="partner">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Unsere Partner</h2>
+            <p>Unterhalb des Hauptsponsors können weitere Partner strukturiert und visuell sauber dargestellt werden.</p>
+          </div>
+        </div>
+        <div class="partner-grid">
+          <div class="logo-card">
+            <div>
+              <div class="logo-placeholder">P1</div>
+              <h3>Partner 1</h3>
+              <p>Logo oder Name einfügen</p>
+            </div>
+          </div>
+          <div class="logo-card">
+            <div>
+              <div class="logo-placeholder">P2</div>
+              <h3>Partner 2</h3>
+              <p>Logo oder Name einfügen</p>
+            </div>
+          </div>
+          <div class="logo-card">
+            <div>
+              <div class="logo-placeholder">P3</div>
+              <h3>Partner 3</h3>
+              <p>Logo oder Name einfügen</p>
+            </div>
+          </div>
+          <div class="logo-card">
+            <div>
+              <div class="logo-placeholder">P4</div>
+              <h3>Partner 4</h3>
+              <p>Logo oder Name einfügen</p>
+            </div>
           </div>
         </div>
       </div>
