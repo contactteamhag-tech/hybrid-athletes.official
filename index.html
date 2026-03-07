@@ -440,6 +440,48 @@
       margin-top: 4px;
     }
 
+    .social-card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .social-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .founder-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.32;
+      z-index: 0;
+      transform: scale(1.03);
+    }
+
+    .founder-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.88) 100%),
+        linear-gradient(135deg, rgba(214,40,40,0.10), rgba(15,23,42,0.04));
+      pointer-events: none;
+    }
+
+    .founder-ken::before {
+      background-image: url("images/profil-links.jpg");
+    }
+
+    .founder-roger::before {
+      background-image: url("images/profil-rechts.jpg");
+    }
+
     .cta-box {
       padding: 30px;
       display: grid;
@@ -617,7 +659,6 @@
               <source src="videos/hero-team-run.mp4" type="video/mp4" />
               Dein Browser unterstützt dieses Video nicht.
             </video>
-            
           </div>
           <div>
             <h3>Dein Einstieg in unsere Community</h3>
@@ -837,16 +878,20 @@
               <a class="btn btn-primary" href="https://instagram.com/hybridathletes.bts" target="_blank" rel="noopener noreferrer">Kanal öffnen</a>
             </div>
           </div>
-          <div class="social-card">
+
+          <div class="social-card founder-card founder-ken">
             <span class="tag">Founder</span>
             <div class="social-handle">@hybrid.ken</div>
+            <p>Founder von Hybrid Athletes und prägendes Gesicht der Community.</p>
             <div class="social-links" style="margin-top:18px;">
               <a class="btn btn-secondary" href="https://instagram.com/hybrid.ken" target="_blank" rel="noopener noreferrer">Profil öffnen</a>
             </div>
           </div>
-          <div class="social-card">
+
+          <div class="social-card founder-card founder-roger">
             <span class="tag">Founder</span>
             <div class="social-handle">@hybrid.roger</div>
+            <p>Founder von Hybrid Athletes und zentraler Teil des Auftritts nach außen.</p>
             <div class="social-links" style="margin-top:18px;">
               <a class="btn btn-secondary" href="https://instagram.com/hybrid.roger" target="_blank" rel="noopener noreferrer">Profil öffnen</a>
             </div>
