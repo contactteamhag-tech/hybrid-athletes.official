@@ -4,1221 +4,1005 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hybrid Athletes – Laufverein in Köln & Siegen</title>
-  <meta name="description" content="Hybrid Athletes – Laufverein in Köln & Siegen. Community, Performance, Events und gemeinsame Runs mit starker Identität." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Hybrid Athletes ist ein moderner Laufverein in Köln und Siegen. Community, Performance, gemeinsame Runs und Event-Teilnahmen. Folge hybridathletes.bts auf Instagram und werde Teil des Teams." />
   <style>
-    :root{
-      --bg:#060606;
-      --bg2:#0d0d0f;
-      --card:#101013;
-      --card2:#15151a;
-      --line:rgba(255,255,255,.08);
-      --text:#f5f5f7;
-      --muted:#b8b8c2;
-      --red:#ff1f2d;
-      --red2:#b30015;
-      --white:#ffffff;
-      --shadow:0 20px 60px rgba(0,0,0,.45);
-      --radius:24px;
-      --max:1220px;
+    :root {
+      --bg: #f5f7fb;
+      --bg-soft: #ffffff;
+      --bg-alt: #eef3f9;
+      --card: rgba(255,255,255,0.94);
+      --card-strong: rgba(255,255,255,0.98);
+      --text: #0f172a;
+      --muted: #5b6472;
+      --line: rgba(15,23,42,0.10);
+      --accent: #d62828;
+      --accent-2: #ef4444;
+      --accent-soft: rgba(214,40,40,0.08);
+      --shadow: 0 20px 55px rgba(15,23,42,0.08);
+      --shadow-soft: 0 10px 30px rgba(15,23,42,0.05);
+      --radius: 22px;
+      --max: 1180px;
+      --blue: #0078d7;
+      --blue-soft: rgba(0,120,215,0.08);
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'Inter',sans-serif;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
       background:
-        radial-gradient(circle at 20% 20%, rgba(255,31,45,.12), transparent 26%),
-        radial-gradient(circle at 80% 10%, rgba(255,31,45,.08), transparent 24%),
-        radial-gradient(circle at 50% 80%, rgba(255,31,45,.10), transparent 28%),
-        linear-gradient(180deg,#050505 0%, #09090b 40%, #050505 100%);
-      color:var(--text);
-      line-height:1.6;
-      overflow-x:hidden;
+        radial-gradient(circle at top right, rgba(214,40,40,0.10), transparent 26%),
+        radial-gradient(circle at top left, rgba(239,68,68,0.08), transparent 24%),
+        linear-gradient(180deg, #f8fafc 0%, #eef3f9 100%);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(255,255,255,.02) 1px, transparent 1px);
-      background-size:34px 34px;
-      mask-image:linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.08));
-      z-index:0;
+    a { color: inherit; text-decoration: none; }
+    img, video { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.82);
+      border-bottom: 1px solid var(--line);
     }
 
-    img{
-      max-width:100%;
-      display:block;
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
     }
 
-    .container{
-      width:min(var(--max), calc(100% - 32px));
-      margin:0 auto;
-      position:relative;
-      z-index:1;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
     }
 
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:30;
-      backdrop-filter:blur(16px);
-      background:rgba(5,5,7,.72);
-      border-bottom:1px solid rgba(255,255,255,.06);
+    .brand-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(15,23,42,0.08);
+      background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(248,250,252,0.95));
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-soft);
+      flex-shrink: 0;
     }
 
-    .nav-inner{
-      min-height:78px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
+    .brand-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:900;
-      letter-spacing:.08em;
-      font-size:1.05rem;
-      text-transform:uppercase;
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.22s ease;
+      cursor: pointer;
     }
 
-    .brand-badge{
-      width:42px;
-      height:42px;
-      border-radius:14px;
-      background:
-        radial-gradient(circle at 30% 30%, #ff5c67 0%, #ff1f2d 35%, #7a0011 100%);
-      box-shadow:
-        0 0 20px rgba(255,31,45,.45),
-        inset 0 0 20px rgba(255,255,255,.12);
-      position:relative;
-      overflow:hidden;
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 16px 35px rgba(214,40,40,0.18);
     }
 
-    .brand-badge::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg, transparent 35%, rgba(255,255,255,.35) 50%, transparent 63%);
-      transform:translateX(-100%);
-      animation:shine 4s linear infinite;
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-blue:hover {
+      transform: translateY(-2px);
     }
 
-    @keyframes shine{
-      to{ transform:translateX(100%); }
+    .btn-secondary {
+      border-color: var(--line);
+      background: rgba(255,255,255,0.92);
+      color: var(--text);
     }
 
-    .nav-links{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+    .btn-blue {
+      background: linear-gradient(135deg, #0b86ed, #0078d7);
+      color: white;
+      box-shadow: 0 16px 35px rgba(0,120,215,0.20);
     }
 
-    .nav-links a{
-      color:#e9e9ef;
-      font-weight:600;
-      font-size:.95rem;
-      opacity:.92;
-      transition:.2s ease;
+    .hero {
+      padding: 84px 0 54px;
     }
 
-    .nav-links a:hover{
-      color:#fff;
-      text-shadow:0 0 12px rgba(255,31,45,.45);
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
     }
 
-    .hero{
-      padding:72px 0 42px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:28px;
-      align-items:stretch;
-    }
-
+    .hero-copy,
     .hero-card,
-    .panel,
-    .glass{
+    .section-card,
+    .about-box,
+    .cta-box,
+    .feature,
+    .faq-item,
+    .stat,
+    .logo-card,
+    .social-card,
+    .partner-cta-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.90));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 36px;
+      min-height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(214,40,40,0.12), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(214,40,40,0.10);
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      max-width: 11ch;
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 62ch;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions,
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-actions { margin-bottom: 26px; }
+
+    .hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-card {
+      padding: 26px;
+      display: grid;
+      gap: 18px;
+      align-content: space-between;
+      min-height: 100%;
+    }
+
+    .hero-visual {
+      min-height: 380px;
+      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+      background: #dbe4ef;
+      border: 1px solid rgba(15,23,42,0.06);
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero-card{
-      padding:38px;
-      min-height:470px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      background:
-        radial-gradient(circle at 85% 18%, rgba(255,31,45,.22), transparent 28%),
-        radial-gradient(circle at 12% 90%, rgba(255,31,45,.12), transparent 24%),
-        linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-    }
-
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      inset:-1px;
-      pointer-events:none;
-      border-radius:inherit;
-      padding:1px;
-      background:linear-gradient(135deg, rgba(255,31,45,.7), rgba(255,255,255,.08), rgba(255,31,45,.22));
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite:xor;
-      mask-composite:exclude;
-      opacity:.6;
-    }
-
-    .eyebrow{
-      color:#ff6871;
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      font-weight:800;
-      font-size:.78rem;
-      margin-bottom:12px;
-    }
-
-    h1{
-      font-size:clamp(2.2rem, 5vw, 4.6rem);
-      line-height:.95;
-      font-weight:900;
-      letter-spacing:-.04em;
-      max-width:11ch;
-    }
-
-    .hero-sub{
-      margin-top:16px;
-      max-width:700px;
-      color:var(--muted);
-      font-size:1.04rem;
-    }
-
-    .hero-bullets{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:22px;
-    }
-
-    .chip{
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04);
-      font-size:.92rem;
-      color:#ececf1;
-    }
-
-    .hero-actions{
-      margin-top:30px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:50px;
-      padding:0 18px;
-      border-radius:14px;
-      font-weight:800;
-      transition:.25s ease;
-      border:1px solid transparent;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg, #ff2533, #b00014);
-      color:#fff;
-      box-shadow:0 10px 30px rgba(255,31,45,.28);
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-1px);
-      box-shadow:0 14px 34px rgba(255,31,45,.35);
-    }
-
-    .btn-secondary{
-      background:rgba(255,255,255,.05);
-      color:#fff;
-      border-color:rgba(255,255,255,.08);
-    }
-
-    .btn-secondary:hover{
-      background:rgba(255,255,255,.08);
-    }
-
-    .hero-side{
-      display:grid;
-      gap:18px;
-    }
-
-    .stat-box{
-      padding:24px;
-      min-height:145px;
-    }
-
-    .stat-number{
-      font-size:2.4rem;
-      font-weight:900;
-      line-height:1;
-      margin-bottom:8px;
-      color:#fff;
-      text-shadow:0 0 18px rgba(255,31,45,.24);
-    }
-
-    .stat-label{
-      font-size:.9rem;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      color:#ff737b;
-      margin-bottom:6px;
-      font-weight:800;
-    }
-
-    .stat-text{
-      color:var(--muted);
-      font-size:.98rem;
-    }
-
-    .section{
-      padding:44px 0;
-    }
-
-    .section-title{
-      font-size:clamp(1.8rem, 4vw, 3rem);
-      line-height:1;
-      font-weight:900;
-      letter-spacing:-.04em;
-      margin-bottom:12px;
-    }
-
-    .section-desc{
-      color:var(--muted);
-      max-width:780px;
-      margin-bottom:26px;
-    }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:18px;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:18px;
-    }
-
-    .card{
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:24px;
-      position:relative;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-
-    .card::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      top:0;
-      height:2px;
-      background:linear-gradient(90deg, transparent, rgba(255,31,45,.85), transparent);
-      opacity:.9;
-    }
-
-    .card .kicker{
-      color:#ff6871;
-      font-size:.8rem;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      font-weight:800;
-      margin-bottom:10px;
-    }
-
-    .card h3{
-      font-size:1.34rem;
-      line-height:1.1;
-      margin-bottom:10px;
-      font-weight:800;
-    }
-
-    .card p{
-      color:var(--muted);
-    }
-
-    .card ul{
-      margin-top:14px;
-      padding-left:18px;
-      color:#e8e8ef;
-    }
-
-    .card li + li{
-      margin-top:8px;
-    }
-
-    .about-split{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:18px;
-    }
-
-    .quote-box{
-      min-height:100%;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      background:
-        radial-gradient(circle at 90% 10%, rgba(255,31,45,.20), transparent 22%),
-        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-    }
-
-    .quote{
-      font-size:clamp(1.4rem, 3vw, 2.3rem);
-      line-height:1.08;
-      font-weight:900;
-      letter-spacing:-.03em;
-      max-width:16ch;
-    }
-
-    .quote small{
-      display:block;
-      margin-top:14px;
-      color:#ff7d84;
-      font-size:.9rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(15,23,42,0.34)),
+        radial-gradient(circle at 80% 20%, rgba(214,40,40,0.16), transparent 30%);
+      pointer-events: none;
+    }
+
+    .hero-visual video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .floating-badge {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(255,255,255,0.45);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-soft);
+      max-width: 320px;
+    }
+
+    .floating-badge strong { display: block; font-size: 1rem; }
+    .floating-badge span { color: #475569; font-size: 0.92rem; }
+
+    section { padding: 34px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .section-head p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .stats,
+    .features,
+    .sponsor-grid,
+    .partner-grid,
+    .social-grid,
+    .events-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stats { grid-template-columns: repeat(4, 1fr); }
+    .features { grid-template-columns: repeat(3, 1fr); }
+    .sponsor-grid { grid-template-columns: 1.15fr 0.85fr; }
+    .partner-grid { grid-template-columns: repeat(4, 1fr); }
+    .social-grid { grid-template-columns: repeat(3, 1fr); }
+    .events-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .stat,
+    .feature,
+    .logo-card,
+    .social-card,
+    .partner-cta-card {
+      padding: 24px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span,
+    .feature p,
+    .about-box p,
+    .faq-item p,
+    .cta-box p,
+    .logo-card p,
+    .section-card p,
+    .social-card p,
+    .partner-cta-card p {
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
+
+    .feature .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+    }
 
-    .steps{
-      display:grid;
-      gap:16px;
+    .about-grid,
+    .runs-grid {
+      display: grid;
+      gap: 16px;
     }
 
-    .step{
-      display:grid;
-      grid-template-columns:60px 1fr;
-      gap:14px;
-      align-items:start;
-      padding:20px;
-      border-radius:20px;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.06);
-    }
-
-    .step-no{
-      width:60px;
-      height:60px;
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:900;
-      font-size:1.1rem;
-      color:#fff;
-      background:linear-gradient(135deg, #ff2432, #950012);
-      box-shadow:0 10px 26px rgba(255,31,45,.28);
-    }
-
-    .instagram-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr .95fr;
-      gap:18px;
-    }
-
-    .insta-main{
-      padding:28px;
-      min-height:330px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      background:
-        radial-gradient(circle at 75% 10%, rgba(255,31,45,.20), transparent 24%),
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
-    }
-
-    .insta-tag{
-      display:inline-flex;
-      width:max-content;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.05);
-      color:#fff;
-      border-radius:999px;
-      padding:10px 14px;
-      font-weight:700;
-      margin-bottom:14px;
-    }
-
-    .profile-card{
-      min-height:330px;
-      padding:0;
-      position:relative;
-      overflow:hidden;
-      isolation:isolate;
-      display:flex;
-      align-items:flex-end;
-      background-color:#0f0f12;
-    }
-
-    .profile-card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-size:cover;
-      background-position:center;
-      transform:scale(1.03);
-      transition:transform .45s ease;
-      z-index:0;
-      opacity:.78;
-      filter:saturate(1.05) contrast(1.04);
-    }
-
-    .profile-card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      z-index:1;
-      background:
-        linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.55) 42%, rgba(0,0,0,.18) 76%, rgba(0,0,0,.15) 100%),
-        radial-gradient(circle at 50% 20%, rgba(255,31,45,.22), transparent 36%),
-        linear-gradient(135deg, rgba(255,31,45,.18), transparent 42%);
-      pointer-events:none;
-    }
-
-    .profile-card:hover::before{
-      transform:scale(1.08);
-    }
-
-    .profile-card.roger::before{
-      background-image:url("images/profil-links.jpg");
-      background-position:center top;
-    }
-
-    .profile-card.ken::before{
-      background-image:url("images/profil-rechts.jpg");
-      background-position:center top;
-    }
+    .about-grid { grid-template-columns: 1fr 1fr; }
+    .runs-grid { grid-template-columns: repeat(3, 1fr); }
 
-    .profile-card .electric{
-      position:absolute;
-      inset:auto -10% 34% -10%;
-      height:120px;
-      z-index:1;
-      pointer-events:none;
-      background:
-        radial-gradient(circle at 10% 50%, rgba(255,50,60,.0) 0 8%, rgba(255,50,60,.72) 9%, rgba(255,50,60,0) 15%),
-        radial-gradient(circle at 32% 38%, rgba(255,50,60,.0) 0 7%, rgba(255,50,60,.78) 8%, rgba(255,50,60,0) 15%),
-        radial-gradient(circle at 56% 54%, rgba(255,50,60,.0) 0 7%, rgba(255,50,60,.75) 8%, rgba(255,50,60,0) 15%),
-        radial-gradient(circle at 76% 44%, rgba(255,50,60,.0) 0 8%, rgba(255,50,60,.74) 9%, rgba(255,50,60,0) 15%);
-      filter:blur(10px);
-      opacity:.85;
-      mix-blend-mode:screen;
+    .about-box,
+    .section-card {
+      padding: 28px;
     }
 
-    .profile-content{
-      position:relative;
-      z-index:2;
-      width:100%;
-      padding:22px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
+    .tag {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #f8fafc;
+      color: #334155;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+      border: 1px solid rgba(15,23,42,0.08);
     }
 
-    .profile-label{
-      display:inline-flex;
-      width:max-content;
-      background:rgba(255,31,45,.16);
-      color:#ffd7da;
-      border:1px solid rgba(255,80,90,.28);
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:.8rem;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      font-weight:800;
-      backdrop-filter:blur(8px);
+    .tag-blue {
+      background: var(--blue-soft);
+      color: var(--blue);
+      border-color: rgba(0,120,215,0.16);
     }
 
-    .profile-content h3{
-      font-size:1.55rem;
-      line-height:1;
-      font-weight:900;
-      text-shadow:0 8px 26px rgba(0,0,0,.35);
+    .runs-grid ul,
+    .events-grid ul {
+      padding-left: 18px;
+      margin: 14px 0 0;
+      color: var(--muted);
     }
 
-    .profile-content p{
-      color:#f0f0f6;
-      opacity:.94;
-      max-width:26ch;
-    }
+    .runs-grid li + li,
+    .events-grid li + li { margin-top: 8px; }
 
-    .profile-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:2px;
-    }
+    .faq { display: grid; gap: 14px; }
+    .faq-item { padding: 22px; }
 
-    .profile-btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:42px;
-      padding:0 14px;
-      border-radius:12px;
-      font-weight:800;
-      font-size:.92rem;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter:blur(8px);
-      color:#fff;
-      transition:.2s ease;
-    }
+    .sponsor-main { padding: 30px; }
+    .sponsor-side { display: grid; gap: 16px; }
 
-    .profile-btn:hover{
-      background:rgba(255,31,45,.20);
-      border-color:rgba(255,31,45,.30);
+    .logo-card,
+    .partner-cta-card {
+      min-height: 150px;
+      display: grid;
+      place-items: center;
+      text-align: center;
     }
 
-    .sponsor-main{
-      padding:30px;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(255,31,45,.18), transparent 25%),
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+    .logo-placeholder {
+      width: 92px;
+      height: 92px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #ffffff, #edf2f7);
+      border: 1px solid rgba(15,23,42,0.08);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #94a3b8;
+      margin: 0 auto 14px;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
     }
 
-    .cta-line{
-      margin-top:18px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      align-items:center;
+    .logo-placeholder.blue {
+      color: var(--blue);
+      background: linear-gradient(135deg, #ffffff, #eff7ff);
+      border-color: rgba(0,120,215,0.12);
     }
 
-    .mail{
-      font-weight:800;
-      color:#fff;
+    .social-handle {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-top: 4px;
     }
 
-    .partner-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
+    .cta-box {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: center;
     }
 
-    .partner-card{
-      min-height:240px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+    .cta-side {
+      display: grid;
+      gap: 12px;
+      justify-items: start;
     }
 
-    .partner-logo{
-      width:100%;
-      aspect-ratio:16/8;
-      border-radius:18px;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.06);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      overflow:hidden;
+    .sponsor-callout {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(214,40,40,0.06), rgba(214,40,40,0.02));
+      border: 1px solid rgba(214,40,40,0.10);
     }
 
-    .partner-logo img{
-      max-height:70px;
-      width:auto;
-      object-fit:contain;
+    .sponsor-contact {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 800;
+      color: var(--accent);
+      word-break: break-word;
     }
 
-    .faq{
-      display:grid;
-      gap:14px;
+    .partner-cta-card {
+      border-style: dashed;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.95));
     }
 
-    .faq-item{
-      padding:22px;
-      border-radius:20px;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.06);
+    .partner-cta-card h3 {
+      font-size: 1.05rem;
     }
 
-    .faq-item h3{
-      font-size:1.08rem;
-      margin-bottom:8px;
-      font-weight:800;
+    .partner-logo-wrap {
+      width: 170px;
+      min-height: 92px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 14px;
+      padding: 12px 16px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: var(--shadow-soft);
     }
 
-    .cta-final{
-      padding:32px;
-      text-align:center;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(255,31,45,.18), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    .partner-logo-wrap img {
+      width: 100%;
+      max-width: 135px;
+      height: auto;
+      object-fit: contain;
     }
 
-    footer{
-      padding:22px 0 44px;
-      color:#a9a9b4;
-      font-size:.95rem;
+    footer {
+      padding: 26px 0 50px;
+      color: var(--muted);
     }
 
-    .muted{
-      color:var(--muted);
+    .footer-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
     }
 
-    @media (max-width: 1080px){
+    @media (max-width: 1100px) {
       .hero-grid,
-      .about-split,
-      .instagram-grid,
-      .grid-3,
-      .partner-grid{
-        grid-template-columns:1fr 1fr;
+      .about-grid,
+      .cta-box,
+      .features,
+      .runs-grid,
+      .stats,
+      .sponsor-grid,
+      .partner-grid,
+      .social-grid,
+      .events-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .hero-card{
-        min-height:auto;
-      }
+      .runs-grid,
+      .events-grid,
+      .cta-box,
+      .sponsor-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 760px){
-      .nav-inner{
-        padding:14px 0;
-        align-items:flex-start;
-        flex-direction:column;
+    @media (max-width: 760px) {
+      .nav { flex-wrap: wrap; }
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        overflow-x: auto;
+        padding-bottom: 4px;
       }
-
-      .nav-links{
-        gap:12px 14px;
-      }
-
-      .hero{
-        padding-top:34px;
-      }
-
+      .hero { padding-top: 48px; }
       .hero-grid,
-      .grid-2,
-      .grid-3,
-      .about-split,
-      .instagram-grid,
-      .partner-grid{
-        grid-template-columns:1fr;
+      .about-grid,
+      .features,
+      .stats,
+      .partner-grid,
+      .social-grid {
+        grid-template-columns: 1fr;
       }
-
+      .hero-copy,
       .hero-card,
-      .card,
-      .insta-main,
+      .about-box,
+      .section-card,
+      .feature,
+      .faq-item,
+      .stat,
+      .cta-box,
+      .logo-card,
       .sponsor-main,
-      .cta-final{
-        padding:22px;
+      .social-card,
+      .partner-cta-card {
+        padding: 22px;
       }
-
-      .section{
-        padding:32px 0;
-      }
-
-      .profile-card,
-      .insta-main{
-        min-height:300px;
-      }
+      h1 { max-width: 100%; }
+      .hero-visual { min-height: 300px; }
     }
   </style>
 </head>
 <body>
-
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="#" class="brand">
-        <span class="brand-badge"></span>
-        <span>Hybrid Athletes</span>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-logo">
+          <img src="images/logo.png" alt="Hybrid Athletes Logo" />
+        </span>
+        <span>HYBRID ATHLETES</span>
       </a>
-
-      <div class="nav-links">
+      <nav class="nav-links">
         <a href="#about">Über uns</a>
         <a href="#runs">Runs</a>
         <a href="#events">Events</a>
-        <a href="#instagram">Instagram</a>
+        <a href="#social">Instagram</a>
         <a href="#sponsor">Sponsor</a>
         <a href="#partner">Partner</a>
-        <a href="#faq">Kontakt</a>
-      </div>
+        <a href="#contact">Kontakt</a>
+      </nav>
     </div>
-  </nav>
+  </div>
 
-  <header class="hero">
-    <div class="container hero-grid">
-      <div class="hero-card">
-        <div>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
           <div class="eyebrow">Köln & Siegen · Laufverein · Community · Performance</div>
           <h1>Run stronger. Together.</h1>
-          <p class="hero-sub">
-            Hybrid Athletes ist mehr als nur ein Run Club. Wir verbinden Community, Disziplin und sportlichen Anspruch
-            in einer starken Laufkultur in Köln und Siegen. Egal ob Einsteiger oder ambitionierter Läufer – bei uns
-            findest du Motivation, Struktur und ein Umfeld, das Eindruck hinterlässt.
+          <p class="lead">
+            Hybrid Athletes ist mehr als nur ein Run Club. Wir verbinden Community, Disziplin und sportlichen Anspruch in einer starken Laufkultur in Köln und Siegen. Egal ob Einsteiger oder ambitionierter Läufer – bei uns findest du Motivation, Struktur und ein Umfeld, das Eindruck hinterlässt.
           </p>
-
-          <div class="hero-bullets">
-            <span class="chip">Offen für jedes Level</span>
-            <span class="chip">Köln & Siegen</span>
-            <span class="chip">Runs, Events & Wettkämpfe</span>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://instagram.com/hybridathletes.bts" target="_blank" rel="noopener noreferrer">Zu @hybridathletes.bts</a>
+            <a class="btn btn-secondary" href="#events">Nächste Events</a>
+          </div>
+          <div class="hero-note">
+            <span>• Offen für jedes Level</span>
+            <span>• Köln & Siegen als Standorte</span>
+            <span>• Gemeinsam bei Runs, Events & Wettkämpfen</span>
           </div>
         </div>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://www.instagram.com/hybridathletes.bts/" target="_blank" rel="noopener">Zu @hybridathletes.bts</a>
-          <a class="btn btn-secondary" href="#events">Nächste Events</a>
-        </div>
-      </div>
-
-      <div class="hero-side">
-        <div class="stat-box panel">
-          <div class="stat-label">Community Einstieg</div>
-          <div class="stat-number">01</div>
-          <p class="stat-text">Über Instagram direkt Kontakt aufnehmen, Fragen stellen und beim nächsten Run oder Event dabei sein.</p>
-        </div>
-
-        <div class="stat-box panel">
-          <div class="stat-label">Standorte</div>
-          <div class="stat-number">2</div>
-          <p class="stat-text">Mit aktiven Gruppen in Köln und Siegen wächst die Community an zwei starken Lauf-Standorten.</p>
-        </div>
-
-        <div class="stat-box panel">
-          <div class="stat-label">Identität</div>
-          <div class="stat-number">100%</div>
-          <p class="stat-text">Moderne Außendarstellung, klare Energie und echte Teamdynamik – online, bei Runs und auf Events.</p>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section class="section" id="events">
-    <div class="container">
-      <h2 class="section-title">Unsere nächsten Events</h2>
-      <p class="section-desc">
-        Hier stehen die anstehenden Läufe und Wettkämpfe in klarer Reihenfolge.
-      </p>
-
-      <div class="grid-3">
-        <article class="card">
-          <div class="kicker">Als Nächstes</div>
-          <h3>Ruppichterother Osterlauf</h3>
-          <p>Am 4. April 2026 steht der traditionelle Osterlauf in Ruppichteroth an – der nächste gemeinsame Wettkampf für Hybrid Athletes.</p>
-          <ul>
-            <li>Datum: 04.04.2026</li>
-            <li>Ort: Ruppichteroth</li>
-            <li>Geplanter Teamstart als Community</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <div class="kicker">Danach</div>
-          <h3>EVL Halbmarathon Leverkusen</h3>
-          <p>Am 14. Juni 2026 folgt mit dem EVL Halbmarathon in Leverkusen der nächste große Wettkampf der Saison.</p>
-          <ul>
-            <li>Datum: 14.06.2026</li>
-            <li>Ort: Leverkusen</li>
-            <li>Halbmarathon mit Teamteilnahme</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <div class="kicker">Ende des Jahres</div>
-          <h3>Generali Köln Marathon</h3>
-          <p>Am 4. Oktober 2026 soll der Generali Köln Marathon als großes Saisonhighlight gemeinsam angegangen werden.</p>
-          <ul>
-            <li>Datum: 04.10.2026</li>
-            <li>Ort: Köln</li>
-            <li>Marathon / Halbmarathon als Community-Finale</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Wofür wir stehen</h2>
-      <p class="section-desc">
-        Ein moderner Laufverein mit klarer Identität: starke Energie, professioneller Auftritt und echte Gemeinschaft –
-        bei regelmäßigen Runs genauso wie bei externen Events.
-      </p>
-
-      <div class="grid-3">
-        <article class="card">
-          <div class="kicker">All Levels</div>
-          <h3>Jeder kann mitlaufen</h3>
-          <p>Vom Anfänger bis zum ambitionierten Runner. Wichtig sind Motivation, Respekt und die Lust auf Entwicklung im Team.</p>
-        </article>
-
-        <article class="card">
-          <div class="kicker">Community</div>
-          <h3>Echte Teamdynamik</h3>
-          <p>Gemeinsame Runs, Austausch und ein Umfeld, das motiviert – mit guter Energie und sichtbarer Identität.</p>
-        </article>
-
-        <article class="card">
-          <div class="kicker">Events</div>
-          <h3>Präsenz auf Wettkämpfen</h3>
-          <p>Hybrid Athletes steht nicht nur online – die Community wird bei Läufen und Wettkämpfen sichtbar gelebt.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="about">
-    <div class="container about-split">
-      <div class="card">
-        <h2 class="section-title">Über Hybrid Athletes</h2>
-        <p class="section-desc" style="margin-bottom:18px;">
-          Hybrid Athletes ist eine moderne Laufcommunity aus Köln und Siegen. Wir verbinden Sport, Mindset und Community
-          zu einer Bewegung, die Menschen gemeinsam stärker macht.
-        </p>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-no">01</div>
-            <div>
-              <h3>Mehr als nur Laufen</h3>
-              <p class="muted">
-                Disziplin, Teamgeist und gemeinsames Wachstum stehen im Zentrum. Ambitioniertes Training trifft auf echte Motivation.
-              </p>
-            </div>
+        <div class="hero-card">
+          <div class="hero-visual">
+            <video autoplay muted loop playsinline poster="images/hero-run.jpg">
+              <source src="videos/hero-team-run.mp4" type="video/mp4" />
+              Dein Browser unterstützt dieses Video nicht.
+            </video>
+            
           </div>
-
-          <div class="step">
-            <div class="step-no">02</div>
-            <div>
-              <h3>Gemeinsam etwas aufbauen</h3>
-              <p class="muted">
-                Wir glauben daran, dass Fortschritt im Team stärker entsteht. Deshalb laufen wir nicht nur zusammen – wir bauen gemeinsam etwas auf.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-no">03</div>
-            <div>
-              <h3>Vision</h3>
-              <p class="muted">
-                Eine neue Generation von Athleten: Menschen, die körperlich und mental stärker werden wollen – mit Sport, Mindset und echter Community.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card quote-box">
-        <div class="quote">
-          Hybrid Athletes steht für eine Bewegung, die zeigt, dass Laufen mehr sein kann als Training.
-          <small>Run stronger. Together.</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Warum man bei uns mitlaufen will</h2>
-      <p class="section-desc">
-        Klare Positionierung, moderne Außendarstellung und eine Community, die in Köln und Siegen sichtbar gelebt wird.
-      </p>
-
-      <div class="grid-3">
-        <article class="card">
-          <div class="kicker">01</div>
-          <h3>Professioneller Auftritt</h3>
-          <p>Eine visuell starke Marke schafft Vertrauen und macht den Verein direkt greifbar – online, bei Runs und bei Events.</p>
-        </article>
-
-        <article class="card">
-          <div class="kicker">02</div>
-          <h3>Offene Community</h3>
-          <p>Neue Leute können unkompliziert über @hybridathletes.bts Kontakt aufnehmen und direkt Teil der Gruppe werden.</p>
-        </article>
-
-        <article class="card">
-          <div class="kicker">03</div>
-          <h3>Klare Identität</h3>
-          <p>Nicht einfach nur ein weiterer Run Club – sondern eine Community mit Haltung, Stil, Ambition und echter Präsenz.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="runs">
-    <div class="container">
-      <h2 class="section-title">Unsere Runs</h2>
-      <p class="section-desc">
-        Regelmäßige Community-Läufe, gemeinsame Treffpunkte und klare Abläufe sorgen dafür, dass neue Mitglieder direkt verstehen,
-        wie Hybrid Athletes funktioniert.
-      </p>
-
-      <div class="grid-3">
-        <article class="card">
-          <div class="kicker">Sunday Run</div>
-          <h3>Community Run</h3>
-          <ul>
-            <li>Lockeres gemeinsames Laufen in motivierender Gruppe</li>
-            <li>Geeignet für unterschiedliche Tempi</li>
-            <li>Fokus auf Austausch, Routine und Spaß</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <div class="kicker">Standorte</div>
-          <h3>Köln & Siegen</h3>
-          <ul>
-            <li>Köln – wechselnde Runspots der Community</li>
-            <li>Siegen – lokale Gruppe und Treffpunkte</li>
-            <li>Events, Community Runs und Wettkämpfe</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <div class="kicker">Join Us</div>
-          <h3>Mitmachen</h3>
-          <ul>
-            <li>@hybridathletes.bts aufrufen</li>
-            <li>Direkt per Instagram melden</li>
-            <li>Infos zum nächsten Run oder Event erhalten</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="instagram">
-    <div class="container">
-      <h2 class="section-title">Instagram & Community</h2>
-      <p class="section-desc">
-        Der Hauptkanal für Anfragen, Updates und Sichtbarkeit ist @hybridathletes.bts. Ergänzend sind @hybrid.ken und
-        @hybrid.roger als wiedererkennbare Gesichter der Community direkt eingebunden.
-      </p>
-
-      <div class="instagram-grid">
-        <article class="card insta-main">
           <div>
-            <span class="insta-tag">Community-Kanal</span>
-            <h3 style="font-size:2rem; font-weight:900; margin-bottom:10px;">@hybridathletes.bts</h3>
-            <p>
-              Hierüber laufen Anfragen, Event-Infos, Community-Updates und der erste Kontakt für Interessenten.
+            <h3>Dein Einstieg in unsere Community</h3>
+            <p style="color: var(--muted); margin-top: 10px;">
+              Über unseren Instagram-Kanal <strong>@hybridathletes.bts</strong> kannst du uns direkt kontaktieren, Fragen stellen und bei den nächsten Runs, Wettkämpfen und Community-Events dabei sein.
             </p>
           </div>
-
-          <div class="hero-actions" style="margin-top:0;">
-            <a class="btn btn-primary" href="https://www.instagram.com/hybridathletes.bts/" target="_blank" rel="noopener">Kanal öffnen</a>
-          </div>
-        </article>
-
-        <article class="card profile-card ken">
-          <div class="electric"></div>
-          <div class="profile-content">
-            <span class="profile-label">Founder</span>
-            <h3>@hybrid.ken</h3>
-            <p>Athlete × Editor · Cologne · klare Energie, klare Marke, echte Präsenz.</p>
-            <div class="profile-actions">
-              <a class="profile-btn" href="https://www.instagram.com/hybrid.ken/" target="_blank" rel="noopener">Profil öffnen</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card profile-card roger">
-          <div class="electric"></div>
-          <div class="profile-content">
-            <span class="profile-label">Founder</span>
-            <h3>@hybrid.roger</h3>
-            <p>Run × Fight · Cologne · 1% Better Every Day · starke Identität mit Wiedererkennungswert.</p>
-            <div class="profile-actions">
-              <a class="profile-btn" href="https://www.instagram.com/hybrid.roger/" target="_blank" rel="noopener">Profil öffnen</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="sponsor">
-    <div class="container">
-      <h2 class="section-title">Unser Sponsor</h2>
-      <p class="section-desc">
-        Hier kann euer Hauptsponsor prominent und hochwertig präsentiert werden – mit klarer Sichtbarkeit und professioneller Einbindung in eure Markenwelt.
-      </p>
-
-      <article class="card sponsor-main">
-        <div class="kicker">Main Sponsor</div>
-        <h3>Werde Sponsor von Hybrid Athletes</h3>
-        <p>
-          Unsere Community wächst stetig und ist regelmäßig bei Wettkämpfen, Community Runs und Events vertreten.
-          Als Sponsor wirst du sichtbar auf unserer Website, in unserer Community und im Umfeld unserer Läufe und Projekte.
-        </p>
-
-        <div class="cta-line">
-          <span class="mail">contact@teamhag.com</span>
-          <a class="btn btn-primary" href="mailto:contact@teamhag.com">Kontakt aufnehmen</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" id="partner">
-    <div class="container">
-      <h2 class="section-title">Unsere Partner</h2>
-      <p class="section-desc">
-        Unterhalb des Hauptsponsors können weitere Partner strukturiert, hochwertig und visuell sauber dargestellt werden.
-      </p>
-
-      <div class="partner-grid">
-        <article class="card partner-card">
-          <div>
-            <div class="kicker">Official Partner</div>
-            <div class="partner-logo">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Decathlon_Logo.svg/512px-Decathlon_Logo.svg.png" alt="Decathlon Logo">
-            </div>
-          </div>
-          <div>
-            <h3>Decathlon</h3>
-            <p>Erster offizieller Partner von Hybrid Athletes.</p>
-            <div class="hero-actions" style="margin-top:14px;">
-              <a class="btn btn-primary" href="https://tidd.ly/3YIhLYw" target="_blank" rel="noopener">Zum Partner</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card partner-card">
-          <div>
-            <div class="kicker">Next</div>
-            <div class="partner-logo">
-              <h3 style="font-size:1.15rem; margin:0; opacity:.92;">Hier könntest du stehen</h3>
-            </div>
-          </div>
-          <div>
-            <h3>Partner gesucht</h3>
-            <p>Werde Partner unserer Community und werde sichtbar auf Website, Socials und Events.</p>
-          </div>
-        </article>
-
-        <article class="card partner-card">
-          <div>
-            <div class="kicker">Your</div>
-            <div class="partner-logo">
-              <h3 style="font-size:1.15rem; margin:0; opacity:.92;">Dein Logo</h3>
-            </div>
-          </div>
-          <div>
-            <h3>Hier könntest du stehen</h3>
-            <p>Dein Unternehmen als Partner von Hybrid Athletes in Köln und Siegen.</p>
-          </div>
-        </article>
-
-        <article class="card partner-card">
-          <div>
-            <div class="kicker">Team</div>
-            <div class="partner-logo">
-              <h3 style="font-size:1.15rem; margin:0; opacity:.92;">Kontakt</h3>
-            </div>
-          </div>
-          <div>
-            <h3>Interesse?</h3>
-            <p>Schreib uns an contact@teamhag.com und werde Teil der Bewegung.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="faq">
-    <div class="container">
-      <h2 class="section-title">FAQ</h2>
-      <p class="section-desc">
-        Die wichtigsten Infos für Interessenten direkt auf einen Blick – klar, direkt und professionell.
-      </p>
-
-      <div class="faq">
-        <article class="faq-item">
-          <h3>Muss ich ein bestimmtes Level haben?</h3>
-          <p class="muted">Nein. Der Club ist offen für verschiedene Leistungsstände. Wichtig sind Motivation, Respekt und Lust auf gemeinsames Laufen – egal ob du in Köln oder Siegen dabei bist.</p>
-        </article>
-
-        <article class="faq-item">
-          <h3>Wie kann ich mit euch Kontakt aufnehmen?</h3>
-          <p class="muted">Am einfachsten über den Instagram-Kanal @hybridathletes.bts. Zusätzlich stehen @hybrid.ken und @hybrid.roger als wiedererkennbare Ansprechpartner hinter der Marke.</p>
-        </article>
-
-        <article class="faq-item">
-          <h3>Wo finden die Runs statt?</h3>
-          <p class="muted">Je nach Termin an verschiedenen Spots in Köln und Siegen. Die finalen Infos zu Treffpunkten, Uhrzeiten und Events können regelmäßig auf Instagram geteilt werden.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="card cta-final">
-        <h2 class="section-title" style="margin-bottom:10px;">Werde Teil von Hybrid Athletes</h2>
-        <p class="section-desc" style="margin:0 auto 20px;">
-          Du suchst eine starke Lauf-Community mit guter Energie, klarer Identität und professionellem Auftritt?
-          Dann folge @hybridathletes.bts auf Instagram und schreib uns direkt.
-        </p>
-
-        <div class="hero-actions" style="justify-content:center;">
-          <a class="btn btn-primary" href="https://www.instagram.com/hybridathletes.bts/" target="_blank" rel="noopener">Jetzt auf Instagram</a>
-          <a class="btn btn-secondary" href="https://www.instagram.com/hybrid.ken/" target="_blank" rel="noopener">@hybrid.ken</a>
-          <a class="btn btn-secondary" href="https://www.instagram.com/hybrid.roger/" target="_blank" rel="noopener">@hybrid.roger</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="events">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Unsere nächsten Events</h2>
+            <p>Hier stehen die anstehenden Läufe und Wettkämpfe in klarer Reihenfolge.</p>
+          </div>
+        </div>
+        <div class="events-grid">
+          <div class="section-card">
+            <span class="tag">Als Nächstes</span>
+            <h3>Ruppichterother Osterlauf</h3>
+            <p>Am 4. April 2026 steht der traditionelle Osterlauf in Ruppichteroth an – der nächste gemeinsame Wettkampf für Hybrid Athletes.</p>
+            <ul>
+              <li>Datum: 04.04.2026</li>
+              <li>Ort: Ruppichteroth</li>
+              <li>Geplanter Teamstart als Community</li>
+            </ul>
+          </div>
+          <div class="section-card">
+            <span class="tag">Danach</span>
+            <h3>EVL Halbmarathon Leverkusen</h3>
+            <p>Am 14. Juni 2026 folgt mit dem EVL Halbmarathon in Leverkusen der nächste große Wettkampf der Saison.</p>
+            <ul>
+              <li>Datum: 14.06.2026</li>
+              <li>Ort: Leverkusen</li>
+              <li>Halbmarathon mit Teamteilnahme</li>
+            </ul>
+          </div>
+          <div class="section-card">
+            <span class="tag">Ende des Jahres</span>
+            <h3>Generali Köln Marathon</h3>
+            <p>Am 4. Oktober 2026 soll der Generali Köln Marathon als großes Saisonhighlight gemeinsam angegangen werden.</p>
+            <ul>
+              <li>Datum: 04.10.2026</li>
+              <li>Ort: Köln</li>
+              <li>Marathon / Halbmarathon als Community-Finale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="community">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Wofür wir stehen</h2>
+            <p>Ein moderner Laufverein mit klarer Identität: starke Energie, professioneller Auftritt und echte Gemeinschaft – bei regelmäßigen Runs genauso wie bei externen Events.</p>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>All Levels</strong>
+            <span>Jeder kann mitlaufen – vom Anfänger bis zum ambitionierten Runner.</span>
+          </div>
+          <div class="stat">
+            <strong>Community</strong>
+            <span>Gemeinsame Runs, Austausch und ein motivierendes Umfeld mit echter Teamdynamik in Köln und Siegen.</span>
+          </div>
+          <div class="stat">
+            <strong>2 Standorte</strong>
+            <span>Mit aktiven Gruppen in Köln und Siegen wächst die Community an zwei starken Lauf-Standorten.</span>
+          </div>
+          <div class="stat">
+            <strong>Events</strong>
+            <span>Präsenz bei Läufen und Wettkämpfen macht sichtbar, wofür Hybrid Athletes steht.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Über Hybrid Athletes</h2>
+            <p>
+              Hybrid Athletes ist eine moderne Laufcommunity aus Köln und Siegen.
+              Wir verbinden Sport, Mindset und Community zu einer Bewegung, die Menschen gemeinsam stärker macht.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-box">
+            <h3>Mehr als nur Laufen</h3>
+            <p>
+              Hybrid Athletes steht für Disziplin, Teamgeist und gemeinsames Wachstum.
+              Unsere Community verbindet ambitioniertes Training mit echter Motivation
+              und einem klaren Teamspirit – auf der Strecke, bei Runs und bei Events.
+            </p>
+
+            <p>
+              Wir glauben daran, dass Fortschritt im Team stärker entsteht.
+              Deshalb laufen wir nicht nur zusammen – wir bauen gemeinsam etwas auf.
+            </p>
+
+            <strong style="display:block;margin-top:18px;">
+              Hybrid Athletes — Run stronger. Together.
+            </strong>
+          </div>
+
+          <div class="about-box">
+            <h3>Unsere Vision</h3>
+            <p>
+              <strong style="display:block;font-size:1.1rem;margin-bottom:12px;">
+                Hybrid Athletes steht für eine neue Generation von Athleten – Menschen, die sowohl körperlich als auch mental stärker werden wollen.
+              </strong>
+              Unsere Vision ist es, eine starke Laufcommunity aufzubauen,
+              die Menschen durch Sport, Mindset, Disziplin und Teamgeist verbindet.
+            </p>
+
+            <p>
+              Mit aktiven Gruppen in Köln und Siegen wollen wir eine Bewegung schaffen,
+              die zeigt, dass Laufen mehr sein kann als Training:
+              eine Gemeinschaft, die gemeinsam stärker wird.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Warum man bei uns mitlaufen will</h2>
+            <p>Klare Positionierung, moderne Außendarstellung und eine Community, die in Köln und Siegen sichtbar gelebt wird.</p>
+          </div>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <div class="icon">01</div>
+            <h3>Professioneller Auftritt</h3>
+            <p>Eine visuell starke Marke schafft Vertrauen und macht den Verein direkt greifbar – online, bei Runs und bei Events.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">02</div>
+            <h3>Offene Community</h3>
+            <p>Neue Leute können unkompliziert über @hybridathletes.bts Kontakt aufnehmen und direkt Teil der Gruppe werden.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">03</div>
+            <h3>Klare Identität</h3>
+            <p>Nicht einfach nur ein weiterer Run Club – sondern eine Community mit Haltung, Stil, Ambition und echter Präsenz auf Events.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="runs">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Unsere Runs</h2>
+            <p>Regelmäßige Community-Läufe, gemeinsame Treffpunkte und klare Abläufe sorgen dafür, dass neue Mitglieder direkt verstehen, wie Hybrid Athletes funktioniert.</p>
+          </div>
+        </div>
+        <div class="runs-grid">
+          <div class="section-card">
+            <span class="tag">Sunday Run</span>
+            <h3>Community Run</h3>
+            <ul>
+              <li>Lockeres gemeinsames Laufen in motivierender Gruppe</li>
+              <li>Geeignet für unterschiedliche Tempi</li>
+              <li>Fokus auf Austausch, Routine und Spaß</li>
+            </ul>
+          </div>
+          <div class="section-card">
+            <span class="tag">Standorte</span>
+            <h3>Köln & Siegen</h3>
+            <ul>
+              <li>Köln – wechselnde Runspots der Community</li>
+              <li>Siegen – lokale Gruppe und Treffpunkte</li>
+              <li>Events, Community Runs und Wettkämpfe</li>
+            </ul>
+          </div>
+          <div class="section-card">
+            <span class="tag">Join Us</span>
+            <h3>Mitmachen</h3>
+            <ul>
+              <li>@hybridathletes.bts aufrufen</li>
+              <li>Direkt per Instagram melden</li>
+              <li>Infos zum nächsten Run oder Event erhalten</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Instagram & Community</h2>
+            <p>Der Hauptkanal für Anfragen, Updates und Sichtbarkeit ist @hybridathletes.bts. Ergänzend sind @hybrid.ken und @hybrid.roger als wiedererkennbare Gesichter der Community direkt eingebunden.</p>
+          </div>
+        </div>
+        <div class="social-grid">
+          <div class="social-card">
+            <span class="tag">Community-Kanal</span>
+            <div class="social-handle">@hybridathletes.bts</div>
+            <p>Hierüber laufen Anfragen, Event-Infos, Community-Updates und der erste Kontakt für Interessenten.</p>
+            <div class="social-links" style="margin-top:18px;">
+              <a class="btn btn-primary" href="https://instagram.com/hybridathletes.bts" target="_blank" rel="noopener noreferrer">Kanal öffnen</a>
+            </div>
+          </div>
+          <div class="social-card">
+            <span class="tag">Founder</span>
+            <div class="social-handle">@hybrid.ken</div>
+            <div class="social-links" style="margin-top:18px;">
+              <a class="btn btn-secondary" href="https://instagram.com/hybrid.ken" target="_blank" rel="noopener noreferrer">Profil öffnen</a>
+            </div>
+          </div>
+          <div class="social-card">
+            <span class="tag">Founder</span>
+            <div class="social-handle">@hybrid.roger</div>
+            <div class="social-links" style="margin-top:18px;">
+              <a class="btn btn-secondary" href="https://instagram.com/hybrid.roger" target="_blank" rel="noopener noreferrer">Profil öffnen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sponsor">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Unser Sponsor</h2>
+            <p>Hier kann euer Hauptsponsor prominent und hochwertig präsentiert werden – mit klarer Sichtbarkeit und professioneller Einbindung in eure Markenwelt.</p>
+          </div>
+        </div>
+        <div class="sponsor-grid">
+          <div class="section-card sponsor-main">
+            <span class="tag">Main Sponsor</span>
+            <h3>Werde Sponsor von Hybrid Athletes</h3>
+            <p>
+              Unsere Community wächst stetig und ist regelmäßig bei Wettkämpfen, Community Runs und Events vertreten.
+              Als Sponsor wirst du sichtbar auf unserer Website, in unserer Community und im Umfeld unserer Läufe und Projekte.
+            </p>
+            <p>
+              Du findest die Idee gut und willst uns supporten? Dann melde dich gerne direkt bei uns.
+            </p>
+
+            <div class="sponsor-callout">
+              <strong>Interesse an einer Partnerschaft?</strong>
+              <p>
+                Ob lokales Unternehmen, Sportmarke oder Dienstleister – wir freuen uns auf passende Sponsoren und langfristige Kooperationen.
+              </p>
+              <a class="sponsor-contact" href="mailto:contact@teamhag.com">contact@teamhag.com</a>
+            </div>
+
+            <div style="margin-top:20px;">
+              <a class="btn btn-primary" href="mailto:contact@teamhag.com">Zum Partner</a>
+            </div>
+          </div>
+
+          <div class="sponsor-side">
+            <div class="logo-card">
+              <div>
+                <div class="logo-placeholder">YOUR</div>
+                <h3>Dein Logo</h3>
+                <p>Hier könnte dein Unternehmen als Hauptsponsor sichtbar werden</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="partner">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Unsere Partner</h2>
+            <p>Unterhalb des Hauptsponsors können weitere Partner strukturiert, hochwertig und visuell sauber dargestellt werden.</p>
+          </div>
+        </div>
+        <div class="partner-grid">
+          <div class="logo-card">
+            <div>
+              <div class="partner-logo-wrap">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Decathlon_-_logo_%28France%2C_2024%29.svg"
+                  alt="Decathlon Logo"
+                />
+              </div>
+              <span class="tag tag-blue">Official Partner</span>
+              <h3>Decathlon</h3>
+              <p>Erster offizieller Partner von Hybrid Athletes.</p>
+              <div style="margin-top:18px;">
+                <a class="btn btn-blue" href="https://tidd.ly/3YIhLYw" target="_blank" rel="noopener noreferrer">Zum Partner</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="partner-cta-card">
+            <div>
+              <div class="logo-placeholder blue">NEXT</div>
+              <h3>Hier könntest du stehen</h3>
+              <p>Werde Partner unserer Community und werde sichtbar auf Website, Socials und Events.</p>
+            </div>
+          </div>
+
+          <div class="partner-cta-card">
+            <div>
+              <div class="logo-placeholder blue">YOUR</div>
+              <h3>Hier könntest du stehen</h3>
+              <p>Dein Unternehmen als Partner von Hybrid Athletes in Köln und Siegen.</p>
+            </div>
+          </div>
+
+          <div class="partner-cta-card">
+            <div>
+              <div class="logo-placeholder blue">TEAM</div>
+              <h3>Hier könntest du stehen</h3>
+              <p>Interesse? Schreib uns an <a href="mailto:contact@teamhag.com"><strong>contact@teamhag.com</strong></a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>FAQ</h2>
+            <p>Die wichtigsten Infos für Interessenten direkt auf einen Blick – klar, direkt und professionell.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="faq-item">
+            <h3>Muss ich ein bestimmtes Level haben?</h3>
+            <p>Nein. Der Club ist offen für verschiedene Leistungsstände. Wichtig sind Motivation, Respekt und Lust auf gemeinsames Laufen – egal ob du in Köln oder Siegen dabei bist.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Wie kann ich mit euch Kontakt aufnehmen?</h3>
+            <p>Am einfachsten über den Instagram-Kanal @hybridathletes.bts. Dort können Interessenten direkt schreiben und Infos zu kommenden Runs, Events und Treffpunkten erhalten. Zusätzlich stehen @hybrid.ken und @hybrid.roger als wiedererkennbare Ansprechpartner hinter der Marke.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Wo finden die Runs statt?</h3>
+            <p>Je nach Termin an verschiedenen Spots in Köln und Siegen. Die finalen Infos zu Treffpunkten, Uhrzeiten und Events können regelmäßig auf Instagram geteilt werden.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Werde Teil von Hybrid Athletes</h2>
+            <p>
+              Du suchst eine starke Lauf-Community mit guter Energie, klarer Identität und professionellem Auftritt? Dann folge <strong>@hybridathletes.bts</strong> auf Instagram und schreib uns direkt. Unter der Hauptseite werden außerdem <strong>@hybrid.ken</strong> und <strong>@hybrid.roger</strong> als Teil der Community sichtbar mitgeführt.
+            </p>
+          </div>
+          <div class="cta-side">
+            <a class="btn btn-primary" href="https://instagram.com/hybridathletes.bts" target="_blank" rel="noopener noreferrer">Jetzt auf Instagram</a>
+            <a class="btn btn-secondary" href="https://instagram.com/hybrid.ken" target="_blank" rel="noopener noreferrer">@hybrid.ken</a>
+            <a class="btn btn-secondary" href="https://instagram.com/hybrid.roger" target="_blank" rel="noopener noreferrer">@hybrid.roger</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <div class="container">
-      © 2026 Hybrid Athletes · Laufverein Köln & Siegen · @hybridathletes.bts · @hybrid.ken · @hybrid.roger
+    <div class="container footer-box">
+      <span>© 2026 Hybrid Athletes · Laufverein Köln & Siegen</span>
+      <span>@hybridathletes.bts · @hybrid.ken · @hybrid.roger</span>
     </div>
   </footer>
-
 </body>
 </html>
