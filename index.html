@@ -22,6 +22,8 @@
       --shadow-soft: 0 10px 30px rgba(15,23,42,0.05);
       --radius: 22px;
       --max: 1180px;
+      --blue: #0078d7;
+      --blue-soft: rgba(0,120,215,0.08);
     }
 
     * { box-sizing: border-box; }
@@ -128,6 +130,16 @@
       color: var(--text);
     }
 
+    .btn-blue {
+      background: linear-gradient(135deg, #0b86ed, #0078d7);
+      color: white;
+      box-shadow: 0 16px 35px rgba(0,120,215,0.20);
+    }
+
+    .btn-blue:hover {
+      transform: translateY(-2px);
+    }
+
     .hero {
       padding: 84px 0 54px;
     }
@@ -148,7 +160,8 @@
     .faq-item,
     .stat,
     .logo-card,
-    .social-card {
+    .social-card,
+    .partner-cta-card {
       background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.90));
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -311,7 +324,8 @@
     .stat,
     .feature,
     .logo-card,
-    .social-card {
+    .social-card,
+    .partner-cta-card {
       padding: 24px;
     }
 
@@ -328,7 +342,8 @@
     .cta-box p,
     .logo-card p,
     .section-card p,
-    .social-card p {
+    .social-card p,
+    .partner-cta-card p {
       color: var(--muted);
       margin: 12px 0 0;
     }
@@ -370,6 +385,12 @@
       border: 1px solid rgba(15,23,42,0.08);
     }
 
+    .tag-blue {
+      background: var(--blue-soft);
+      color: var(--blue);
+      border-color: rgba(0,120,215,0.16);
+    }
+
     .runs-grid ul,
     .events-grid ul {
       padding-left: 18px;
@@ -386,7 +407,8 @@
     .sponsor-main { padding: 30px; }
     .sponsor-side { display: grid; gap: 16px; }
 
-    .logo-card {
+    .logo-card,
+    .partner-cta-card {
       min-height: 150px;
       display: grid;
       place-items: center;
@@ -404,6 +426,14 @@
       font-weight: 800;
       color: #94a3b8;
       margin: 0 auto 14px;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .logo-placeholder.blue {
+      color: var(--blue);
+      background: linear-gradient(135deg, #ffffff, #eff7ff);
+      border-color: rgba(0,120,215,0.12);
     }
 
     .social-handle {
@@ -425,6 +455,46 @@
       display: grid;
       gap: 12px;
       justify-items: start;
+    }
+
+    .sponsor-callout {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(214,40,40,0.06), rgba(214,40,40,0.02));
+      border: 1px solid rgba(214,40,40,0.10);
+    }
+
+    .sponsor-contact {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 800;
+      color: var(--accent);
+      word-break: break-word;
+    }
+
+    .partner-cta-card {
+      border-style: dashed;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.95));
+    }
+
+    .partner-cta-card h3 {
+      font-size: 1.05rem;
+    }
+
+    .decathlon-logo {
+      width: 150px;
+      height: 92px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0078d7, #0b86ed);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      margin: 0 auto 14px;
+      box-shadow: var(--shadow-soft);
     }
 
     footer {
@@ -489,7 +559,8 @@
       .cta-box,
       .logo-card,
       .sponsor-main,
-      .social-card {
+      .social-card,
+      .partner-cta-card {
         padding: 22px;
       }
       h1 { max-width: 100%; }
@@ -571,7 +642,7 @@
           <div class="section-card">
             <span class="tag">Als Nächstes</span>
             <h3>Ruppichterother Osterlauf</h3>
-            <p>Am 4. April 2026 steht der traditionelle Osterlauf in Ruppichteroth an – der nächste gemeinsame Wettkampf für Hybrid Athletes. </p>
+            <p>Am 4. April 2026 steht der traditionelle Osterlauf in Ruppichteroth an – der nächste gemeinsame Wettkampf für Hybrid Athletes.</p>
             <ul>
               <li>Datum: 04.04.2026</li>
               <li>Ort: Ruppichteroth</li>
@@ -631,59 +702,56 @@
       </div>
     </section>
 
-   <section id="about">
-  <div class="container">
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Über Hybrid Athletes</h2>
+            <p>
+              Hybrid Athletes ist eine moderne Laufcommunity aus Köln und Siegen.
+              Wir verbinden Sport, Mindset und Community zu einer Bewegung, die Menschen gemeinsam stärker macht.
+            </p>
+          </div>
+        </div>
 
-    <div class="section-head">
-      <div>
-        <h2>Über Hybrid Athletes</h2>
-        <p>
-          Hybrid Athletes ist eine moderne Laufcommunity aus Köln und Siegen. 
-          Wir verbinden Sport, Mindset und Community zu einer Bewegung, die Menschen gemeinsam stärker macht.
-        </p>
+        <div class="about-grid">
+          <div class="about-box">
+            <h3>Mehr als nur Laufen</h3>
+            <p>
+              Hybrid Athletes steht für Disziplin, Teamgeist und gemeinsames Wachstum.
+              Unsere Community verbindet ambitioniertes Training mit echter Motivation
+              und einem klaren Teamspirit – auf der Strecke, bei Runs und bei Events.
+            </p>
+
+            <p>
+              Wir glauben daran, dass Fortschritt im Team stärker entsteht.
+              Deshalb laufen wir nicht nur zusammen – wir bauen gemeinsam etwas auf.
+            </p>
+
+            <strong style="display:block;margin-top:18px;">
+              Hybrid Athletes — Run stronger. Together.
+            </strong>
+          </div>
+
+          <div class="about-box">
+            <h3>Unsere Vision</h3>
+            <p>
+              <strong style="display:block;font-size:1.1rem;margin-bottom:12px;">
+                Hybrid Athletes steht für eine neue Generation von Athleten – Menschen, die sowohl körperlich als auch mental stärker werden wollen.
+              </strong>
+              Unsere Vision ist es, eine starke Laufcommunity aufzubauen,
+              die Menschen durch Sport, Mindset, Disziplin und Teamgeist verbindet.
+            </p>
+
+            <p>
+              Mit aktiven Gruppen in Köln und Siegen wollen wir eine Bewegung schaffen,
+              die zeigt, dass Laufen mehr sein kann als Training:
+              eine Gemeinschaft, die gemeinsam stärker wird.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="about-grid">
-
-      <div class="about-box">
-        <h3>Mehr als nur Laufen</h3>
-        <p>
-          Hybrid Athletes steht für Disziplin, Teamgeist und gemeinsames Wachstum. 
-          Unsere Community verbindet ambitioniertes Training mit echter Motivation 
-          und einem klaren Teamspirit – auf der Strecke, bei Runs und bei Events.
-        </p>
-
-        <p>
-          Wir glauben daran, dass Fortschritt im Team stärker entsteht. 
-          Deshalb laufen wir nicht nur zusammen – wir bauen gemeinsam etwas auf.
-        </p>
-
-        <strong style="display:block;margin-top:18px;">
-          Hybrid Athletes — Run stronger. Together.
-        </strong>
-      </div>
-
-      <div class="about-box">
-        <h3>Unsere Vision</h3>
-        <p>
-          <strong style="display:block;font-size:1.1rem;margin-bottom:12px;">
-            Hybrid Athletes steht für eine neue Generation von Athleten – Menschen, die sowohl körperlich als auch mental stärker werden wollen.
-          </strong>
-          Unsere Vision ist es, eine starke Laufcommunity aufzubauen, 
-          die Menschen durch Sport, Mindset, Disziplin und Teamgeist verbindet.
-        </p>
-
-        <p>
-          Mit aktiven Gruppen in Köln und Siegen wollen wir eine Bewegung schaffen, 
-          die zeigt, dass Laufen mehr sein kann als Training: 
-          eine Gemeinschaft, die gemeinsam stärker wird.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
     <section>
       <div class="container">
@@ -799,20 +867,34 @@
         <div class="sponsor-grid">
           <div class="section-card sponsor-main">
             <span class="tag">Main Sponsor</span>
-            <h3>Platz für euren Hauptsponsor</h3>
+            <h3>Werde Sponsor von Hybrid Athletes</h3>
             <p>
-              Diese Sektion ist bewusst hochwertig aufgebaut, damit der Sponsor nicht nur genannt, sondern sichtbar inszeniert wird. Hier kann später ein Logo, ein kurzer Vorstellungstext, ein Claim und auf Wunsch ein Link zur Website eingebunden werden.
+              Unsere Community wächst stetig und ist regelmäßig bei Wettkämpfen, Community Runs und Events vertreten.
+              Als Sponsor wirst du sichtbar auf unserer Website, in unserer Community und im Umfeld unserer Läufe und Projekte.
             </p>
             <p>
-              Ideal für Unternehmen, die mit sportlicher Performance, Community, Gesundheit oder lokaler Sichtbarkeit in Köln und Siegen verbunden werden möchten.
+              Du findest die Idee gut und willst uns supporten? Dann melde dich gerne direkt bei uns.
             </p>
+
+            <div class="sponsor-callout">
+              <strong>Interesse an einer Partnerschaft?</strong>
+              <p>
+                Ob lokales Unternehmen, Sportmarke oder Dienstleister – wir freuen uns auf passende Sponsoren und langfristige Kooperationen.
+              </p>
+              <a class="sponsor-contact" href="mailto:contact@teamhag.com">contact@teamhag.com</a>
+            </div>
+
+            <div style="margin-top:20px;">
+              <a class="btn btn-primary" href="mailto:contact@teamhag.com">Sponsor werden</a>
+            </div>
           </div>
+
           <div class="sponsor-side">
             <div class="logo-card">
               <div>
-                <div class="logo-placeholder">LOGO</div>
-                <h3>Sponsor Logo</h3>
-                <p>Datei später einfach austauschen</p>
+                <div class="logo-placeholder">YOUR</div>
+                <h3>Dein Logo</h3>
+                <p>Hier könnte dein Unternehmen als Hauptsponsor sichtbar werden</p>
               </div>
             </div>
           </div>
@@ -831,30 +913,34 @@
         <div class="partner-grid">
           <div class="logo-card">
             <div>
-              <div class="logo-placeholder">P1</div>
-              <h3>Partner 1</h3>
-              <p>Logo oder Name einfügen</p>
+              <div class="decathlon-logo">DECATHLON</div>
+              <span class="tag tag-blue">Official Partner</span>
+              <h3>Decathlon</h3>
+              <p>Erster offizieller Partner von Hybrid Athletes.</p>
             </div>
           </div>
-          <div class="logo-card">
+
+          <div class="partner-cta-card">
             <div>
-              <div class="logo-placeholder">P2</div>
-              <h3>Partner 2</h3>
-              <p>Logo oder Name einfügen</p>
+              <div class="logo-placeholder blue">NEXT</div>
+              <h3>Hier könntest du stehen</h3>
+              <p>Werde Partner unserer Community und werde sichtbar auf Website, Socials und Events.</p>
             </div>
           </div>
-          <div class="logo-card">
+
+          <div class="partner-cta-card">
             <div>
-              <div class="logo-placeholder">P3</div>
-              <h3>Partner 3</h3>
-              <p>Logo oder Name einfügen</p>
+              <div class="logo-placeholder blue">YOUR</div>
+              <h3>Hier könntest du stehen</h3>
+              <p>Dein Unternehmen als Partner von Hybrid Athletes in Köln und Siegen.</p>
             </div>
           </div>
-          <div class="logo-card">
+
+          <div class="partner-cta-card">
             <div>
-              <div class="logo-placeholder">P4</div>
-              <h3>Partner 4</h3>
-              <p>Logo oder Name einfügen</p>
+              <div class="logo-placeholder blue">TEAM</div>
+              <h3>Hier könntest du stehen</h3>
+              <p>Interesse? Schreib uns an <a href="mailto:contact@teamhag.com"><strong>contact@teamhag.com</strong></a>.</p>
             </div>
           </div>
         </div>
